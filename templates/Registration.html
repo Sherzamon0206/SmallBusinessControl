@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML Form</title>
+    <link rel="stylesheet" href="{% static 'registration/css/style.css' %}">
+    <script src="{% static 'registration/js/form.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+</head>
+<style>
+    .bi {
+        position: relative;
+        left: 270px;
+        bottom: 29px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <h2>Registration Form</h2>
+    <div class="box">
+        <label>First Name</label>
+        <input type="text" name="firstname" id="firstname">
+        <div class="error" id="nameErr"></div>
+    </div>
+    <div class="box">
+        <label>Last Name</label>
+        <input type="text" name="lastname" id="lastname">
+        <div class="error" id="nameErr"></div>
+    </div>
+    <div class="box">
+        <label>Username</label>
+        <input type="text" name="username" id="username">
+        <div class="error" id="nameErr"></div>
+    </div>
+    <div class="box">
+        <label>Email Address</label>
+        <input type="text" name="email" id="email">
+        <div class="error" id="emailErr"></div>
+    </div>
+    <div class="box">
+        <label>Mobile Number</label>
+        <input type="text" name="mobile" maxlength="10" id="mobile">
+        <div class="error" id="mobileErr"></div>
+    </div>
+    <div class="box">
+        <label>Company name</label>
+        <input type="text" name="company" maxlength="10" id="text">
+        <div class="error" id="mobileErr"></div>
+    </div>
+    <div class="box">
+        <label>logo</label>
+        <input type="file" name="img" maxlength="10" id="img" accept="image">
+        <div class="error" id="mobileErr">
+        </div>
+    </div>
+    <div class="box">
+        <label for="region">region</label>
+        <select name="region" id="region">
+            <option value="Andijon viloyati">Andijon viloyati</option>
+            <option value="Buxoro viloyati">Buxoro viloyati</option>
+            <option value="Fargʻona viloyati">Fargʻona viloyati</option>
+            <option value="Jizzax viloyati">Jizzax viloyati</option>
+            <option value="Xorazm viloyati">Xorazm viloyati</option>
+            <option value="Namangan viloyati">Namangan viloyati</option>
+            <option value="Qashqadaryo viloyati">Qashqadaryo viloyati</option>
+            <option value="Qoraqalpogʻiston Respublikasi	">Qoraqalpogʻiston Respublikasi</option>
+            <option value="Samarqand viloyati">Samarqand viloyati</option>
+            <option value="Sirdaryo viloyati">Sirdaryo viloyati</option>
+            <option value="Namangan viloyati">Surxondaryo viloyati</option>
+            <option value="Toshkent viloyati">Toshkent viloyati</option>
+            <option value="Toshkent shahar">Toshkent shahar</option>
+        </select>
+    </div>
+    <div class="box">
+        <label for="password">Password:</label>
+        <input type="password" name="password1" id="password1"/>
+        <i class="bi bi-eye-slash" id="togglePassword"></i>
+    </div>
+    <div class="box">
+        <label for="password">Password:</label>
+        <input type="password" name="password2" id="password2"/>
+    </div>
+    <div class="box">
+        <input type="submit" value="Submit">
+    </div>
+
+    <div class="text-center p-t-115">
+						<span class="txt1">
+							Do you have an account?
+						</span>
+
+        <a class="txt2" href="{% url 'login' %}">
+            Login
+        </a>
+    </div>
+</form>
+</body>
+
+</html>
